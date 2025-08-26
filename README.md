@@ -12,3 +12,5 @@ The x value represents the "class" or category. For example, both 'dog' and 'cat
 The y value represents closeness or similarity within the class. For example, 'dog' might have y = 2 and 'cat' y = 2.2 because they are similar but not identical.
 
 If you add another animal, like 'mouse', it would also have x = 1 and a y slightly larger than 'dog' (e.g., y = 2.4) to reflect its relative closeness.
+
+Now adding another catagory, like possibly a 'car', it would have a different x position, for now it can be x = 2, an increment of 1 from animals. The y is the same concept, you can start at 2, and each car you add, you can increment by .1-.9
