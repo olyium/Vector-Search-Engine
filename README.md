@@ -1,16 +1,38 @@
 # Vector-Search-Engine
+
 A simple Python-based search engine that uses vector embeddings and Euclidean distance to find the closest matches to a query. Demonstrates fundamental AI/ML concepts such as vectorization and nearest neighbor search.
 
-# How you can modify it?
+# How to Modify
 
 Modifying this script is simple. To add new "searches" or "vectors," locate the VECTORS variable, which contains the names and their corresponding vector points.
 
 Vector points define the position of each item:
 
-The x value represents the "class" or category. For example, both 'dog' and 'cat' have x = 1 because they belong to the same class (animals).
+x value: Represents the "class" or category.
+Example: Both 'dog' and 'cat' have x = 1 because they belong to the same class (animals).
 
-The y value represents closeness or similarity within the class. For example, 'dog' might have y = 2 and 'cat' y = 2.2 because they are similar but not identical.
+y value: Represents closeness or similarity within the class.
+Example: 'dog' might have y = 2 and 'cat' y = 2.2 because they are similar but not identical.
 
-If you add another animal, like 'mouse', it would also have x = 1 and a y slightly larger than 'dog' (e.g., y = 2.4) to reflect its relative closeness.
+Example: Adding another animal like 'mouse' → x = 1 and y slightly larger than 'dog' (e.g., y = 2.4).
+Adding a new category like 'car' → x = 2 (incremented from animals), and y starts at 2; each car can increment y by 0.1–0.9 depending on similarity.
 
-Now adding another catagory, like possibly a 'car', it would have a different x position, for now it can be x = 2, an increment of 1 from animals. The y is the same concept, you can start at 2, and each car you add, you can increment by .1-.9
+# Limits
+
+The script only works with items already in the database.
+
+New words not in VECTORS cannot be automatically recognized.
+
+Vector positions are precise, but the word database is fixed.
+
+# How It Works
+
+Database: Each word has a vector position.
+
+Input: User provides a vector or a word (converted into a vector).
+
+Distance Calculation: The script measures the Euclidean distance between the input vector and every vector in the database.
+
+Ranking: Distances are sorted from closest to furthest.
+
+Final Results: The closest vector positions are converted back to words and returned as a finalized list.
